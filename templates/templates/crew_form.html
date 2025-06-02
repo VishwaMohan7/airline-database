@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Assign Crew{% endblock %}
+{% block content %}
+<h2>Assign Crew to Flight</h2>
+<form method="post">
+  <label>Flight:
+    <select name="flight" required>
+      <option value="">Select Flight</option>
+      {% for f in flights %}
+      <option value="{{ f.FlightID }}">{{ f.Flight_Number }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Staff:
+    <select name="staff" required>
+      <option value="">Select Staff</option>
+      {% for s in staff %}
+      <option value="{{ s.StaffID }}">{{ s.Name }} ({{ s.Role }})</option>
+      {% endfor %}
+    </select>
+  </label>
+  <button type="submit">Assign</button>
+</form>
+{% endblock %}

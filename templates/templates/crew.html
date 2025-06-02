@@ -1,0 +1,6 @@
+<h2>Flight Crew Assignments</h2>
+<ul>
+  {% for c in crew %}
+    <li>Flight ID: {{ c.FlightID }} - Staff ID: {{ c.StaffID }}</li>
+  {% endfor %}
+</ul>

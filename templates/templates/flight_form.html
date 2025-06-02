@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Add Flight{% endblock %}
+{% block content %}
+<h2>Add Flight</h2>
+<form method="post">
+  <label>Flight Number: <input type="text" name="number" required /></label>
+  <label>Origin: <input type="text" name="origin" required /></label>
+  <label>Destination: <input type="text" name="destination" required /></label>
+  <label>Departure Time: <input type="datetime-local" name="depart" required /></label>
+  <label>Arrival Time: <input type="datetime-local" name="arrive" required /></label>
+  <label>Aircraft:
+    <select name="aircraft" required>
+      <option value="">Select Aircraft</option>
+      {% for a in aircrafts %}
+      <option value="{{ a.Aircraft_ID }}">{{ a.Model }} (Seats: {{ a.Total_Seats }})</option>
+      {% endfor %}
+    </select>
+  </label>
+  <button type="submit">Add Flight</button>
+</form>
+{% endblock %}
