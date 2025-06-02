@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}New Booking{% endblock %}
+{% block content %}
+<h2>New Booking</h2>
+<form method="post">
+  <label>Passenger:
+    <select name="passenger" required>
+      <option value="">Select Passenger</option>
+      {% for p in passengers %}
+      <option value="{{ p.PassengerID }}">{{ p.Name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Flight:
+    <select name="flight" required>
+      <option value="">Select Flight</option>
+      {% for f in flights %}
+      <option value="{{ f.FlightID }}">{{ f.Flight_Number }} (Seats left: {{ get_available_seats(f.FlightID) }})</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Seat Number: <input type="text" name="seat" required /></label>
+  <button type="submit">Book</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Flight Status{% endblock %}
+{% block content %}
+<h2>Flight Status</h2>
+<table>
+  <thead>
+    <tr><th>Flight Number</th><th>Status</th><th>Departure Time</th><th>Arrival Time</th></tr>
+  </thead>
+  <tbody>
+    {% for f in flights %}
+    <tr>
+      <td>{{ f.Flight_Number }}</td>
+      <td>{{ f.Status }}</td>
+      <td>{{ f.Departure_Time }}</td>
+      <td>{{ f.Arrival_Time }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

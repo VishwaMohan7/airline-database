@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Register Passenger{% endblock %}
+{% block content %}
+<h2>Register Passenger</h2>
+<form method="post">
+  <label>Name: <input type="text" name="name" required /></label>
+  <label>Email: <input type="email" name="email" required /></label>
+  <label>Phone: <input type="text" name="phone" required /></label>
+  <label>Passport Number: <input type="text" name="passport" required /></label>
+  <button type="submit">Register</button>
+</form>
+{% endblock %}

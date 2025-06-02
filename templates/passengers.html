@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Passengers{% endblock %}
+{% block content %}
+<h2>Passengers</h2>
+<a href="{{ url_for('passenger_register') }}">Register New Passenger</a>
+<table>
+  <thead>
+    <tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Passport Number</th></tr>
+  </thead>
+  <tbody>
+    {% for p in passengers %}
+    <tr>
+      <td>{{ p.PassengerID }}</td>
+      <td>{{ p.Name }}</td>
+      <td>{{ p.Email }}</td>
+      <td>{{ p.Phone }}</td>
+      <td>{{ p.Passport_Number }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
